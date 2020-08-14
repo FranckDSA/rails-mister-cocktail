@@ -2,6 +2,9 @@
   <div class="card">
     <div class="card-body">
     <h5 class="card-title"><%= @cocktail.name %></h5>
+    <% @cocktail.doses.each do |dose| %>
+      <p>Dose: <%= dose.description %> of: <%= dose.ingredient.name %></p>
+    <% end %>
     </div>
   </div>
   <div>
