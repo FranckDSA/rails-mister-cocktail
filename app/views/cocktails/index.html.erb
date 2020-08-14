@@ -5,9 +5,15 @@
   <div class="cocktails-list">
     <div class="card"></div>
     <% @cocktails.each do |cocktail| %>
-      <div class="card">
-        <h2><%= link_to "#{cocktail.name}", cocktail_path(cocktail) %></h2>
-      </div>
+    <div class="card">
+      <h2><%= link_to "#{cocktail.name}", cocktail_path(cocktail) %></h2>
+    </div>
+    <div class="card-img">
+      <% if cocktail.photo.attached? %>
+      <%= cl_image_tag cocktail.photo.key, width: 300, height: 150, crop: :fill %>
+      <% else %>
+      <p>No photo attached</p>
+    <% end %>      </div>
     <% end %>
   </div>
   <%= link_to "Add a cocktail", new_cocktail_path %>
