@@ -3,7 +3,7 @@
     <div class="card-body">
     <h5 class="card-title"><%= @cocktail.name %></h5>
     <% @cocktail.doses.each do |dose| %>
-      <p>Dose: <%= dose.description %> of: <%= dose.ingredient.name %></p>
+      <p>Dose: <%= dose.description %> of: <%= dose.ingredient.name %> |<%= link_to "Delete", dose_path(dose), method: :delete %></p>
     <% end %>
     </div>
   </div>
