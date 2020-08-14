@@ -13,7 +13,8 @@
       <%= cl_image_tag cocktail.photo.key, width: 300, height: 150, crop: :fill %>
       <% else %>
       <p>No photo attached</p>
-    <% end %>      </div>
+      <% end %>
+    </div>
     <% end %>
   </div>
   <%= link_to "Add a cocktail", new_cocktail_path %>
